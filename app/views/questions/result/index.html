@@ -1,0 +1,199 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        result
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        
+        <!-- bespoke permits -->
+        {% if 
+          data.bridge_type=="bespoke_permit" or
+          data.outfall_width=="bespoke_permit" or 
+          data.channel_habitat_size=="bespoke_permit" or
+          data.scaffolding_time=="bespoke_permit" or
+          data.scaffolding_size=="bespoke_permit" or
+          data.investigation_hole=="bespoke_permit" or
+          data.dredging_distance=="bespoke_permit" or
+          data.dewatering_size=="bespoke_permit" %}
+
+          <form method="get" action="#" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">
+            More information is needed
+          </h1>
+
+          <br>
+
+          <p class="lede">From the answers you have given, your worked appears to be quite complicated.</p>
+          <p class="lede">More information is needed in order to get permission to do the work you want to do. </p>
+
+          <label class="form-label" for="full-name-f1">Description of work</label>
+          <input class="form-control" id="full-name-f1" type="text" style="height: 180px;">
+
+          <br>
+          <br>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Continue" />
+          </div>
+
+        <!-- permit -->
+        {% elif 
+          data.bridge_type=="permit_28" or
+          data.outfall_width=="permit_27" or
+          data.what_you_building=="permit_32" or
+          data.what_you_repairing=="permit_33" or
+          data.channel_habitat_size=="permit_31" or
+          data.scaffolding_size=="permit_34" or
+          data.what_you_digging=="permit_35" or
+          data.what_you_digging=="permit_29" or
+          data.investigation_hole=="permit_36" or
+          data.what_you_removing=="permit_38" or
+          data.dewatering_or_diverting=="permit_30" or
+          data.dewatering_size=="permit_26" %}
+
+          <form method="get" action="/questions/result/view_conditions_yes_no" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">
+            Apply for a permit
+          </h1>
+
+          <br>
+
+          <p class="lede">It costs £50 to apply for a permit.</p>
+          <p class="lede">Check activity conditions before applying.</p>
+
+          <br>
+          <br>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Continue  - view conditions" />
+          </div>
+
+        <!-- exemptions -->
+        {% elif 
+          data.what_you_building=="exemption_11" or
+          data.outfall_width=="exemption_12" or
+          data.what_you_building=="exemption_11" or
+          data.what_you_building=="exemption_16" or
+          data.what_you_building=="exemption_26" or
+          data.bridge_type=="exemption_5" or
+          data.outfall_width=="exemption_12" or
+          data.what_you_repairing=="exemption_28" or
+          data.what_you_repairing=="exemption_8" or 
+          data.what_you_repairing=="exemption_9" or 
+          data.what_you_repairing=="exemption_13" or
+          data.what_you_repairing=="exemption_14" or
+          data.what_you_repairing=="exemption_17" or
+          data.what_is_it=="exemption_18" or
+          data.what_is_it=="exemption_27" or
+          data.what_is_it=="exemption_20" or 
+          data.what_is_it=="exemption_19" or
+          data.what_is_it=="exemption_10" or 
+          data.what_is_it=="exemption_17" or
+          data.channel_habitat_size=="exemption_15" or
+          data.scaffolding_size=="exemption_6" or
+          data.what_you_digging=="exemption_25" or
+          data.on_new_thing=="exemption_2" or
+          data.on_new_thing=="exemption_3" or
+          data.on_existing_thing=="exemption_4" or
+          data.what_you_removing=="exemption_21" or
+          data.what_you_removing=="exemption_22" or
+          data.dredging_distance=="exemption_23" or
+          data.dredging_distance=="exemption_24" or
+          data.dewatering_size=="exemption_7" 
+          %}
+            
+            <form method="get" action="//questions/result/view_conditions_yes_no" class="form">
+
+            {{formData | safe}}
+
+            <h1 class="heading-large">
+              Register your details
+            </h1>
+
+            <br>
+
+            <p class="lede">It is free to register.</p>
+            <p class="lede">Check activity conditions before registering.</p>
+
+            <br>
+            <br>
+
+            <div class="form-group">
+              <input type="submit" class="button" value="Continue  - view conditions" />
+            </div>
+
+        <!-- exclusions -->
+        {% elif 
+          data.emergency=="exclusion_5" or
+          data.what_you_building=="exclusion_10" or
+          data.what_you_building=="exclusion_12" or
+          data.what_you_building=="exclusion_14" or
+          data.what_you_repairing=="exclusion_11" or
+          data.scaffolding_time=="exclusion_8" or
+          data.investigation_hole=="exclusion_12" or
+          data.on_existing_thing=="exclusion_12" or 
+          data.what_you_removing=="exclusion_15"
+          %}
+
+            <form method="get" action="/questions/result/view_conditions_yes_no" class="form">
+
+            {{formData | safe}}
+
+            <h1 class="heading-large">
+              You do not need permission
+            </h1>
+
+            <br>
+
+            <p class="lede">Check activity conditions before finishing.</p>
+
+            <br>
+            <br>
+
+            <div class="form-group">
+              <input type="submit" class="button" value="Continue  - view conditions" />
+            </div>
+
+        {% endif %}
+
+        <!-- permit 
+        {% if data.dredging_distance=="permit" %}
+
+        <h1 class="heading-large">
+          You need to apply for a permit
+        </h1>
+
+        <br>
+
+        <p class="lede">It costs £50 to apply for a permit.</p>
+        <p class="lede">Check activity conditions before applying.</p>
+
+        <br />
+
+        {% endif %}
+        -->
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

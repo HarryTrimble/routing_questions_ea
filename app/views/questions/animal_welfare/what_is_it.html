@@ -1,0 +1,86 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">wildlife</a>
+      </li>
+      <li>
+        <a href="#">what you building?</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/scaffolding_ladders" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What are you doing?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What are you doing? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="what_is_it_1" class="block-label">
+              <input id="what_is_it_1" type="radio" name="what_is_it" value="channel_habitat">
+              Building a habitat in the river channel using natural materials
+            </label>
+
+            <label for="what_is_it_2" class="block-label">
+              <input id="what_is_it_2" type="radio" name="what_is_it" value="exemption_18">
+              Placing stones or logs in a river for habitat enhancement
+            </label>
+
+            <label for="what_is_it_3" class="block-label">
+              <input id="what_is_it_3" type="radio" name="what_is_it" value="exemption_27">
+              Building a bankside wildlife structure
+            </label>
+          
+            <label for="what_is_it_4" class="block-label">
+              <input id="what_is_it_4" type="radio" name="what_is_it" value="exemption_20">
+              Constructing fish passage notches on an existing impoundment
+            </label>
+
+            <label for="what_is_it_5" class="block-label">
+              <input id="what_is_it_5" type="radio" name="what_is_it" value="exemption_19">
+              Constructing eel pass devices on existing structures
+            </label>
+
+            <label for="what_is_it_6" class="block-label">
+              <input id="what_is_it_6" type="radio" name="what_is_it" value="exemption_10">
+              Creating a drinking bay on a riverbank
+            </label>
+
+            <label for="what_is_it_7" class="block-label">
+              <input id="what_is_it_7" type="radio" name="what_is_it" value="exemption_17">
+              Cleaning gravel for fish spawning
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

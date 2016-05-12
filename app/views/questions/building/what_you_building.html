@@ -1,0 +1,101 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        building
+      </li>
+      <li>
+        what you building?
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/repair_maintain" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What are you building?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What are you building? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="what_you_building_1" class="block-label">
+              <input id="what_you_building_1" type="checkbox" name="what_you_building" value="exclusion_12">
+              Fencing
+            </label>
+
+            <label for="what_you_building_2" class="block-label">
+              <input id="what_you_building_2" type="checkbox" name="what_you_building" value="exclusion_10">
+              Flood protection device attached to a building
+            </label>
+
+            <label for="what_you_building_3" class="block-label">
+              <input id="what_you_building_3" type="checkbox" name="what_you_building" value="exclusion_14">
+              Notice board
+            </label>
+          
+            <label for="what_you_building_4" class="block-label">
+              <input id="what_you_building_4" type="checkbox" name="what_you_building" value="bridge">
+              Bridge
+            </label>
+
+            <label for="what_you_building_5" class="block-label">
+              <input id="what_you_building_5" type="checkbox" name="what_you_building" value="outfall">
+              Outfall pipe or headwall
+            </label>
+
+            <label for="what_you_building_6" class="block-label">
+              <input id="what_you_building_6" type="checkbox" name="what_you_building" value="exemption_26">
+              Raised flood defence around 1-6 adjoining properties
+            </label>
+
+            <label for="what_you_building_7" class="block-label">
+              <input id="what_you_building_7" type="checkbox" name="what_you_building" value="exemption_11">
+              Access platform on the riverbank
+            </label>
+
+            <label for="what_you_building_8" class="block-label">
+              <input id="what_you_building_8" type="checkbox" name="what_you_building" value="exemption_16">
+              Survey raft
+            </label>
+
+            <label for="what_you_building_9" class="block-label">
+              <input id="what_you_building_9" type="checkbox" name="what_you_building" value="permit_32">
+              Culvert
+            </label>
+
+            <label for="what_you_building_9" class="block-label">
+              <input id="what_you_building_9" type="checkbox" name="what_you_building" value="permit_32">
+              Not on list
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,2015 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        result
+      </li>
+      <li>
+        conditions
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        
+        <!-- bespoke permits -->
+        {% if 
+          data.bridge_type=="bespoke_permit" or
+          data.outfall_width=="bespoke_permit" or 
+          data.channel_habitat_size=="bespoke_permit" or
+          data.scaffolding_time=="bespoke_permit" or
+          data.scaffolding_size=="bespoke_permit" or
+          data.investigation_hole=="bespoke_permit" or
+          data.dredging_distance=="bespoke_permit" or
+          data.dewatering_size=="bespoke_permit" %}
+
+          <form method="get" action="#" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">Conditions</h1>
+
+          <br>
+
+          <p class="lede">You may want to change the design and scale of
+          your activity, so you only need to <a href="#">apply for a standard permit</a>.</p>
+          <br>
+          
+        <!-- permits -->
+        {% elif 
+          data.bridge_type=="permit_28" or
+          data.outfall_width=="permit_27" or
+          data.what_you_building=="permit_32" or
+          data.what_you_repairing=="permit_33" or
+          data.channel_habitat_size=="permit_31" or
+          data.scaffolding_size=="permit_34" or
+          data.what_you_digging=="permit_35" or
+          data.what_you_digging=="permit_29" or
+          data.investigation_hole=="permit_36" or
+          data.what_you_removing=="permit_38" or
+          data.dewatering_or_diverting=="permit_30" or
+          data.dewatering_size=="permit_26" %}
+
+          <form method="get" action="#" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">Conditions</h1>
+
+          <br>
+
+          <p class="lede">You may want to change the design and scale of
+          your activity, so you only need to <a href="#">register your
+          details</a>.</p>
+          <br>
+
+        <!-- exemptions -->
+        {% elif 
+          data.what_you_building=="exemption_11" or
+          data.outfall_width=="exemption_12" or
+          data.what_you_building=="exemption_11" or
+          data.what_you_building=="exemption_16" or
+          data.what_you_building=="exemption_26" or
+          data.bridge_type=="exemption_5" or
+          data.outfall_width=="exemption_12" or
+          data.what_you_repairing=="exemption_28" or
+          data.what_you_repairing=="exemption_8" or 
+          data.what_you_repairing=="exemption_9" or 
+          data.what_you_repairing=="exemption_13" or
+          data.what_you_repairing=="exemption_14" or
+          data.what_you_repairing=="exemption_17" or
+          data.what_is_it=="exemption_18" or
+          data.what_is_it=="exemption_27" or
+          data.what_is_it=="exemption_20" or 
+          data.what_is_it=="exemption_19" or
+          data.what_is_it=="exemption_10" or 
+          data.what_is_it=="exemption_17" or
+          data.channel_habitat_size=="exemption_15" or
+          data.scaffolding_size=="exemption_6" or
+          data.what_you_digging=="exemption_25" or
+          data.on_new_thing=="exemption_2" or
+          data.on_new_thing=="exemption_3" or
+          data.on_existing_thing=="exemption_4" or
+          data.what_you_removing=="exemption_21" or
+          data.what_you_removing=="exemption_22" or
+          data.dredging_distance=="exemption_23" or
+          data.dredging_distance=="exemption_24" or
+          data.dewatering_size=="exemption_7" 
+          %}
+
+          <form method="get" action="#" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">Conditions</h1>
+
+          <br>
+
+          <p class="lede">If you cannot follow these conditions
+            <a href="#">apply for a permit</a>.</p>
+          <br>
+
+        <!-- exclusions -->
+        {% elif 
+          data.emergency=="exclusion_5" or
+          data.what_you_building=="exclusion_10" or
+          data.what_you_building=="exclusion_12" or
+          data.what_you_building=="exclusion_14" or
+          data.what_you_repairing=="exclusion_11" or
+          data.scaffolding_time=="exclusion_8" or
+          data.investigation_hole=="exclusion_12" or
+          data.on_existing_thing=="exclusion_12" or 
+          data.what_you_removing=="exclusion_15"
+          %}
+
+          <form method="get" action="#" class="form">
+
+          {{formData | safe}}
+
+          <h1 class="heading-large">Conditions</h1>
+
+          <br>
+
+          <p class="lede">If you cannot follow these conditions,
+            <a href="#">register your details</a>.</p>
+          <br>
+
+        {% endif %}
+
+        <!-- CONDITIONS -->
+         <!-- conditions / exclusion fencing -->
+         {% if data.emergency=="exclusion_5" %}
+
+            <p class="bold-small">Conditions for doing emergency
+            work</p>
+
+            <ol class="list list-bullet">
+              <li>(a) the activity is not a pre-planned emergency
+              activity</li>
+
+              <li>(b) the person carrying on the activity provides
+              the regulator with notice in writing as soon as
+              practicable of the carrying on of the activity and
+              circumstances in which it was carried on</li>
+
+              <li>(3) For the purposes of sub-paragraph (2)(a), a “pre-planned emergency activity” means any activity which has been planned in response to an emergency before it occurs.</li>
+
+              <li>(4) The power of the regulator to serve a remediation notice under paragraph 9 of Part 1 of this Schedule applies where an activity has been carried on in reliance on this exclusion as if that activity were an unauthorised activity.</li>
+            </ol>
+
+            <p>See <a href=
+            "/version_1/guidance/guidance">regulations</a></p>
+
+          {% endif %} 
+
+        <!-- conditions / exclusion fencing -->
+         {% if data.what_you_building=="exclusion_12" %}
+
+          <p class="bold-small">Conditions for fencing</p>
+
+
+          <ol class="list list-bullet">
+              <li>cannot be on the bed or banks of the main river</li>
+
+              <li>can be made from post and rail </li> 
+              <li>post and wire mesh with greater than 100 mm spacing</li>
+              <li>post and wire strands</li>
+          </ol>
+
+
+          <p>See <a href=
+          "/version_1/guidance/guidance">regulations</a></p>
+          <br>
+        {% endif %} 
+
+        <!-- conditions / exclusion flood protection device -->
+         {% if data.what_you_building=="exclusion_10" %}
+
+          <p class="bold-small">Conditions for attaching flood
+          protection device attached to a building in order to protect the interior of that building</p>
+
+
+          <ol class="list list-bullet">
+              <li>the flood protection provided by the device extends only to the building to which the device is fitted</li>
+          </ol>
+
+
+          <p>See <a href=
+          "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- conditions / exclusion notice board -->
+         {% if data.what_you_building=="exclusion_14" %}
+
+        <p class="bold-small">Conditions for building a notice
+        board</p>
+
+
+        <ol class="list list-bullet">
+            <li>The board is attached to existing fencing or freestanding, permanent posts</li>
+
+            <li>the board is more than 2 metres from any culvert, remote defence or flood defence structure on the main river and from any sea defence;</li>
+
+            <li>the board is more than 2 metres from the landward side of the bank.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- conditions / exemption footbridges -->
+         {% if data.bridge_type=="exemption_5" %}
+
+        <p class="bold-small">Conditions for building a footbridge</p>
+
+
+         <ol class="list list-bullet">
+                <li>you cannot carry out the activity on or within 500m of a site
+                designated as a Special Protection Area (SPA), Special Area for
+                Conservation (SAC), Ramsar site, Site of Special Scientific Interest
+                (SSSI) or Local Nature Reserve (LNR). The locations of all these sites
+                are available to view on MAGIC at www.magic.gov.uk</li>
+
+                <li>you cannot carry out any work in within 100m of a river or lake in
+                England or (if your activity is near the border) in Wales that is
+                classified as of high morphological status under the Water Framework
+                Directive. For information call the Environment Agency customer contact
+                centre on 03708 506 506.</li>
+
+                <li>you plan your works to ensure there are no significant adverse
+                effects on protected or priority species of importance for nature
+                conservation. You can find more information on the species that could
+                be impacted by your works from your local record centre or Natural
+                England's guidance on construction near protected areas and wildlife
+                https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+
+                <li>the length of the footbridge measured from the top of one bank of
+                the main river to the top of the other bank is no more than 8
+                metres</li>
+
+                <li>the footbridge has no support in the watercourse, a deck width of
+                no more than 1.5 metres and a kickerboard of no more than 100mm in
+                height</li>
+
+                <li>the footbridge does not reduce the cross-sectional area of the
+                channel in the main river</li>
+
+                <li>you cannot carry out the works within 100 metres of any
+                non-agricultural building in the floodplain or another man-made
+                structure on or in the main river</li>
+
+                <li>the construction does not affect the bed of the main river</li>
+
+                <li>the length of bank disturbed by the construction extends to no more
+                than 1 metre on either side of the footbridge</li>
+
+                <li>the footbridge is securely attached to foundations which are no
+                closer than 1 metre to the edge of the bank</li>
+
+                <li>construction of the footbridge does not require reinforcement of
+                the bed or banks</li>
+
+                <li>the approach ramp or steps for the footbridge do not extend more
+                than 4 metres from the landward side of the bank</li>
+
+                <li>the lowest point of the underside of the bridge is at least 600mm
+                higher than the top of both banks of the main river</li>
+
+                <li>you remove from the floodplain all excavated material not re-used
+                on the site of the works</li>
+
+                <li>the height of the land at each end of the footbridge is not changed
+                by the construction</li>
+
+                <li>any parapet of the footbridge is of open construction comprising
+                (i)post and rail, (ii)post and wire mesh fencing of at least 100mm
+                spacing; or (iii)post and wire strands.</li>
+            </ol>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption outfalls -->
+        {% if data.outfall_width=="exemption_12" %}
+
+        <p class="bold-small">Conditions for building a outfall
+        or headwall</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            
+            <li>you cannot carry out any work in or within 200m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.
+
+            <li>you plan your works to ensure there are no significant adverse effects on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre (Link to LRC site) or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+
+            <li>the headwall is not located within 50 metres of another man-made structure on or in the main river</li>
+            <li>if the headwall is on a non-tidal main river, the outfall pipe is aligned to an angle of between 30° and 60° to the direction of flow in the river</li>
+            <li>the diameter of the outfall pipe is less than 300mm</li>
+            <li>the height of the headwall is no more than 1.5 metres or no more than 75% of the height of the bank, whichever is less</li>
+            <li>the total length of bank affected during construction of the headwall is no more than 1.5 metres</li>
+            <li>the headwall, wing walls and apron do not project beyond the line of the bank prior to the works being carried out</li>
+            <li>the headwall is not within 8 metres of a flood defence structure or river control works</li>
+            <li>the outfall pipe does not pass through or under any culvert, remote defence, river control works or sea defence, or any raised embankment or wall forming part of the bank of the main river</li>
+            <li>you remove from the floodplain all excavated material not re-used on the site of the works</li>
+            <li>any pipe that discharges through the headwall does not pass within 8 metres of a flood defence structure.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption raised flood defence -->
+         {% if data.what_you_building=="exemption_26" %}
+
+        <p class="bold-small">Conditions for building raised flood defences around a maximum of 6 adjoining properties</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out the activity within 8 metres of the main river</li>
+            <li>the dimensions of the flood defences are no more than 1 metre in height and 6 metres in width</li>
+            <li>the defences are located at least 20 metres from any building not owned by the owners of the properties</li>
+            <li>the total area protected by the defences is no more than 150m2 for each property</li>
+            <li>the defences are to protect existing buildings</li>
+            <li>the works are within the existing boundary of the properties.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption access platform -->
+        {% if data.what_you_building=="exemption_11" %}
+
+        <p class="bold-small">Conditions for building a access
+        platforms on the bank of a river or that project into or over a main river</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 500m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you cannot carry out any work in or within 500m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you plan your works to ensure there are no significant adverse effects on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre (Link to LRC site) or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+            <li>the platform is not located within 50 metres of any other man-made structure</li>
+            <li>the platform projects no more than 1.2m into or over the main river and occupies no more than 2m of bank length</li>
+            <li>the works must not adversely affect any culvert, remote defence, river control works, sea defence or any raised embankment or wall forming part of the bank of the main river</li>
+            <li>the part of the platform which projects over the channel is constructed as a flat deck, with no solid infill beneath the platform, supported on piers or piles of no more than 300mm width</li>
+            <li>any steps cut into the bank are supported by timber risers on the vertical part of the step. </li>
+        </ol>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption repairing bank slips -->
+         {% if data.what_you_building=="exemption_14" %}
+
+        <p class="bold-small">Conditions for repairing bank slips and erosion using the fallen materials</p>
+
+
+        <ol class="list list-bullet">
+            <li>the works do not involve removal of material from the bed of the main river other than bank slippage;</li>
+            <li>the works do not affect more than 10 metres of the bank at any one time;</li>
+            <li>the works do not encroach into the channel of the main river beyond the line of the bank prior to the works being carried out;</li>
+            <li>when the works are finished, the height of the bank does not exceed the lower of—</li>
+              <ul>
+                <li>(i) the height of the bank on either side of the works, and</li>
+                <li>(ii) the height of the bank prior to the slip or erosion;</li>
+              </ul>
+            <li>the works are securely fastened to the bank at each end so as to prevent erosion behind the works;</li>
+            <li>any repair of a bank slippage is made using as materials only material that has subsided from that bank;</li>
+            <li>any repair of erosion uses materials of the same kind as those present on the relevant site;</li>
+            <li>the works do not have a significant adverse effect on species included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006, or by Welsh Ministers under section 42 of that Act(a), that are not protected species;</li>
+            <li>the works are not carried out in, or within 100 metres of, a water body in England that is part of a main river classified as of high morphological status by the Agency in accordance with the relevant directions; and</li>
+            <li>the works do not involve the use of a vehicle or of wheeled or tracked machinery on the bed or banks of the main river.</li>
+        </ol>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption access platform -->
+         {% if data.what_you_building=="exemption_16" %}
+
+        <p class="bold-small">Conditions for installing temporary small rafts for surveys</p>
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the raft has dimensions of no greater than 1.5 metres x 1 metre x 0.15 metre</li>
+            <li>any equipment box used on the raft has a height of no more than 0.75 metre</li>
+            <li>the raft is permanently and securely attached to the bank</li>
+            <li>the raft is installed no less than 100 metres from any other raft</li>
+            <li>when the raft is installed, there are no more than four other rafts within a distance of one kilometre</li>
+            <li>the raft is installed for no more than 12 months and removed immediately if, within that period, it is no longer required</li>
+            <li>the raft is not installed within 100 metres of any non-agricultural building in the floodplain or another man-made structure on or in the main river. </li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exclusion minor works -->
+         {% if data.what_you_repairing=="exclusion_11" %}
+
+        <p class="bold-small">Conditions for doing minor
+        works on or affecting bridges and culverts for highways and public rights of way</p>
+
+
+        <ol class="list list-bullet">
+            <li>the minor works do not affect, or have the potential to affect, the bed, banks, water level, normal flow or flood flow in the main river</li>
+            <li>equipment associated with the minor works is not stored on the bed or banks of the main river</li>
+            <li>no works are carried out from the main river or from the banks of the main river</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption tracks and paths -->
+         {% if data.what_you_repairing=="exemption_28" %}
+
+        <p class="bold-small">Conditions for improvement works
+        for tracks or paths</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of to a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the works are to an existing track or path</li>
+            <li>the works do not alter the route or width of the track or path</li>
+            <li>the works do not disturb the bed or banks of any main river</li>
+            <li>the works do not increase the level of the path by more than 100mm</li>
+            <li>when the works are completed, you remove all materials and debris from the site </li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption maintaining river or sea defences -->
+         {% if data.what_you_repairing=="exemption_8" %}
+
+        <p class="bold-small">Conditions for maintaining of a
+        raised river or sea defence</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you must use materials of the same kind as those present in the raised defences for the maintenance works, and you must not alter the shape of those defences or the overall height of the protection afforded by those defences</li>
+            <li>the raised defences must be carrying out the functions for which they were originally designed</li>
+            <li>the works do not disturb the bed or, up to normal ground level, the banks of the main river. </li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions for this exemption, you cannot</p>
+         <ol class="list list-bullet">
+            <li>erect a new defence</li>
+            <li>realign or increase the height of the defence</li>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption Maintaining structures within the river -->
+         {% if data.what_you_repairing=="exemption_9" %}
+
+        <p class="bold-small">Conditions for maintaining
+        structures within the river</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you plan your works to ensure there are no significant adverse effects on protected or priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+            <li>the maintenance works do not alter any dimension of the structure</li>
+            <li>the structure is carrying out the functions for which it was originally designed</li>
+            <li>you must use materials of the same kind as those present in the structure for the maintenance works</li>
+            <li>the maintenance works do not occur between 15th March and 15th June inclusive in any year</li><li>on a main river that is a designated salmonid river, the maintenance works do not occur between 1st October and 14th March inclusive in any year</li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions for this exemption, you will not be able to strengthen a bridge pier by increasing its size.</p> 
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption repairing riverbank -->
+
+         {% if data.what_you_repairing=="exemption_13" %}
+
+        <p class="bold-small">Conditions for repairing and protecting up to 10 metres of main river banks using natural materials</p>
+
+        <ol class="list list-bullet">
+            <li>You cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you plan your works to ensure there are no significant adverse effects on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+            <li>the length of bank affected by the works is no more than 10 metres</li>
+            <li>the works do not include the use of steel sheet piling, concrete, cement or concrete bagwork, brickwork, gabions or non-biodegradable materials</li>
+            <li>the works do not take place within 50 metres of a bank that has been reinforced</li>
+            <li>the works do not encroach into the channel of the main river beyond the line of the bank prior to the works being carried out</li>
+            <li>when the works are finished, the height of the bank does not exceed the lower of (i) the height of the bank on either side of the works, and (ii) the height of the bank prior to the works being carried out</li>
+            <li>the works are securely fastened to the bank at each end so as to prevent erosion behind the works</li>
+            <li>the works do not involve the use of vehicles or wheeled or tracked machinery on the bed or bank of the main river</li>
+            <li>the works are not to a bank consisting of an earth cliff over 1 metre in height</li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions of this exemption you must use natural materials for the repair and protection work, for example spiling or coir rolls.</p> 
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+
+        <!-- exemption repairing riverbank -->
+
+         {% if data.what_you_repairing=="exemption_17" %}
+
+        <p class="bold-small">Conditions for cleaning gravel
+        for fish spawning</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 500m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out the activity in or within 500m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>the works are only carried out in September or October in any year</li>
+            <li>the works are to no more than 20m2 of gravel per location, with a gap of at least 30 metres between locations</li>
+            <li>the works do not adversely affect the banks or established bed of the main river</li>
+            <li>the works are carried out using only hand tools or machinery carried and operated by one person</li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions in this exemption, you cannot carry out anydredging.</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption habitat in the river  -->
+         {% if data.channel_habitat_size=="exemption_15" %}
+
+        <p class="bold-small">Conditions for building a habitat
+        in the river</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar Site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>the structure occupies no more than half the width of the cross-sectional area of the channel in the main river and no more than 20 metres of the length of the main river</li>
+            <li>no part of the structure is higher than 0.3 metres above the level of the river bed or 25% of the height of the bank (excluding any wall or embankment forming part of the bank), whichever is greater</li>
+            <li>the structure is made from naturally occurring woody material and is securely fastened to the bed of the main river, the bank or both</li>
+            <li>no works take place within 100 metres of a non-agricultural building in the floodplain, another natural channel habitat structure, stones or logs placed in the main river for habitat enhancement or a man-made structure on or in the main river</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption stones or logs in a river for habitat -->
+         {% if data.what_is_it=="exemption_18" %}
+
+        <p class="bold-small">Conditions for placing stones or logs in a main river to enhance habitats</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+
+            <li>you cannot carry out any work in within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            
+            <li>you cannot carry out any work in or within 200m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            
+            <li>any stones placed in the channel must be of a type that occur naturally in the main river and do not exceed 400mm in any dimension</li>
+            
+            <li>any log placed in the channel must be of less than 2 metres in length, less than 400mm in diameter and oriented at an angle of within 45° to the flow of water</li>
+            
+            <li>any log placed in the channel must be from a type of tree that occurs naturally in the vicinity of the main river; and is securely fixed to the bed or bank of the main river</li>
+            
+            <li>the stones or logs are placed in the channel over no more than 20 metres of the length, and 20% of the width, of the main river</li>
+            
+            <li>no stones or logs are placed within 100 metres of a non-agricultural building in the floodplain, a natural channel habitat structure, an existing emplacement of stones or logs placed in the main river for habitat enhancement or a man-made structure on or in the main river. </li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions of this exemption you cannot create a weir. You may, for example, create groynes from placed stones to create or enhance habitat.</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption bankside wildlife structure -->
+         {% if data.what_is_it=="exemption_27" %}
+
+        <p class="bold-small">Conditions for building a
+        bankside wildlife structure</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you do not carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>the length of bank excavated during construction of the structure is no more than 1.5 metres</li>
+            <li>the height of the structure is no more than 1.5 metres or no more than 75% of the height of the bank, whichever is less</li>
+            <li>the structure is not located within 50 metres of another man-made structure on or in the main river</li>
+            <li>the structure is not located within 8 metres of a flood defence structure or river control works</li>
+            <li>the structure does not project beyond the line of the bank prior to the works being carried out</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption fish passage notches -->
+         {% if data.what_is_it=="exemption_20" %}
+
+        <p class="bold-small">Conditions for constructing fish passage notches in an existing impounding structure </p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the construction does not affect the structural integrity of the existing impoundment</li>
+            <li>construction of the notches does not change the water level in the main river by more than 20cm upstream or downstream from the existing structure</li>
+            <li>the existing impoundment is located on a main river with a width of no more than 5 metres measured between the top of each bank</li>
+            <li>the construction does not adversely affect the banks or established bed of the main river</li>
+            <li>the notch is no more than 0.6 metre in width. </li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions for this exemption, you cannot construct new independent structures. You may, for example, install notches on an existing weir</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption eel pass devices -->
+         {% if data.what_is_it=="exemption_19" %}
+
+        <p class="bold-small">Conditions for constructing eel
+        pass devices on existing structures</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the existing structure is not located on a tidal river</li>
+            <li>the device is permanently and securely attached to the existing structure</li>
+            <li>the width of the device is no more than 5% of the width of the main river</li>
+            <li>the device does not extend upstream or downstream from the existing structure more than 10 metres or the width of the channel measured between the top of each bank of the main river,whichever is the lesser </li>
+        </ol>
+
+        <p class="bold-small">In order to meet the description and conditions in this exemption you cannot construct new independent structures. You may, for example, attach a pipe with a scrubbing brush to an existing weir.</p> 
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption building drinking bays -->
+         {% if data.what_is_it=="exemption_10" %}
+
+        <p class="bold-small">Conditions for building drinking
+        bay on a riverbank</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 500m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you cannot carry out any work in or within 500m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you plan your works to ensure there are no significant adverse effects on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+            <li>The drinking bay is not located within 100 metres of any other man-made structure on or in the main river</li>
+            <li>the bay is surrounded by a post and rail fence which must project into or over the main river no more than 1.2 metres or 10% of the width of the main river, whichever is less</li>
+            <li>the base of the bay has a surface made of concrete, stone or inert hard core</li>
+            <li>you remove from the floodplain all excavated material not re-used on the site of the works</li>
+            <li>the works must not adversely affect any culvert, remote defence, river control works, sea defence or any raised embankment or wall forming part of the bank of the main river</li>
+            <li>the remainder of the bank is fenced so as to prevent damage to the bank</li>
+        </ol>
+
+        <p>In order to meet the description and conditions for this exemption the drinking bay cannot protrude beyond the bank profile, so you cannot install any structure that crosses into the channel.</p> 
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption Cleaning gravel for fish spawning -->
+         {% if data.what_is_it=="exemption_17" %}
+
+        <h3 class="heading-medium">Rules for gravel-cleaning for fishspawning beds</h3>
+
+
+        <p class="bold-small">Conditions for gravel-cleaning for fishspawning beds</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 500m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out the activity in or within 500m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>the works are only carried out in September or October in any year</li>
+            <li>the works are to no more than 20m2 of gravel per location, with a gap of at least 30 metres between locations</li>
+            <li>the works do not adversely affect the banks or established bed of the main river</li>
+            <li>the works are carried out using only hand tools or machinery carried and operated by one person </li>
+        </ol>
+
+        <p>In order to meet the description and conditions in this exemption, you cannot carry out any dredging.</p> 
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exclusion scaffolding day or less -->
+         {% if data.scaffolding_ladders_time=="exclusion_8" %}
+
+        <p class="bold-small">Conditions for putting up
+        scaffolding</p>
+
+
+        <ol class="list list-bullet">
+            <li>the suitability of river conditions is reviewed by the operator each working day</li>
+
+            <li>the equipment is erected on each working day on which it is required</li>
+
+            <li>the equipment is removed at the end of each working day and is stored outside the river or its banks</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption scaffolding day or more -->
+         {% if data.scaffolding_size=="exemption_6" %}
+
+        <p class="bold-small">Conditions for putting up
+        scaffolding</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the scaffolding is in place for no longer than 4 weeks</li>
+            <li>the scaffolding is not in place between 15th March and 15th June inclusive in any year
+            <li>on a main river that is a designated salmonid river, the scaffolding is not in place between 1st October and 14th March inclusive in any year</li>
+            <li>the scaffolding does not occupy more than 10 metres of a river bank at any one time</li>
+            <li>the scaffolding projects into or over the main river no more than 1.2 metres or no more than 10% of the width of the main river, whichever is less</li>
+            <li>the scaffolding is located at least 100 metres from any other scaffolding which is in place and also registered under this exemption</li>
+            <li>you remove any debris lodged against the scaffolding within 24 hours (except where it is unsafe to do so)</li>
+            <li>any transoms and walking decks are set no lower than 600 mm above water level. </li>
+        </ol>
+
+        <p>In order to meet the description and conditions, you cannot erect scaffolding across whole structures such as bridges or weirs that cross a main river.</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        <br>
+        {% endif %} 
+        <!-- exemption scrape or shallow wetland feature -->
+         {% if data.what_you_digging=="exemption_25" %}
+
+        <p class="bold-small">Conditions for creating scrape or
+        shallow wetland feature</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the area of the excavation is no more than 0.1 hectare and takes place at least 100 metres from any other excavation in the floodplain</li>
+            <li>the excavation is no more than 500mm deep at any point</li>
+            <li>where spoil from the excavation is spread on the floodplain, the spoil is spread to a depth of no more than 100mm</li>
+            <li>the excavation is at least 8 metres from any structure forming part of a flood defence and from the landward side of each bank of the main river</li>
+        </ol>
+
+        <p>In order to meet the description and conditions for this exemption you can only excavate shallow features. You cannot, for example, excavate fish ponds</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption crape or shallow wetland feature -->
+         {% if data.what_you_digging=="exemption_25" %}
+
+        <p class="bold-small">Conditions for creating scrape or
+        shallow wetland feature</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 200m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>the area of the excavation is no more than 0.1 hectare and takes place at least 100 metres from any other excavation in the floodplain</li>
+            <li>the excavation is no more than 500mm deep at any point</li>
+            <li>where spoil from the excavation is spread on the floodplain, the spoil is spread to a depth of no more than 100mm</li>
+            <li>the excavation is at least 8 metres from any structure forming part of a flood defence and from the landward side of each bank of the main river</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exclusion digging holes -->
+         {% if data.investigation_hole=="exclusion_12" %}
+
+        <p class="bold-small">Conditions for site investigation boreholes and trial pits within a flood plain</p>
+
+
+        <ol class="list list-bullet">
+            <li>the works are more than 5 metres from any culvert, remote defence or flood defence structure on the main river and from any sea defence</li>
+            <li>the works are more than 8 metres from the banks of a non-tidal main river</li>
+            <li>the works are more than 16 metres from the banks of a tidal main river</li>
+            <li>the works are completed, including refilling of the borehole or pit, within a total of 48 hours</li>
+        </ol>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exclusion cables inside existing thing -->
+         {% if data.on_existing_thing=="exclusion_12" %}
+
+        <p class="bold-small">Conditions for cables, service
+        crossing inside existing structure</p>
+
+
+        <ol class="list list-bullet">
+            <li>the crossing is entirely within the original profile of the existing structure</li>
+
+            <li>the regulator has not sent a notification to the landowner that the structure has been identified for removal or modification in order to achieve the measures set out in the relevant River Basin Management Plan that are designed to move a water body to good status pursuant to Article 4 of the Water Framework Directive</li>
+
+            <li>equipment associated with the works is not stored on the bed or banks of the main river</li>
+
+            <li>no works are carried out from the main river or from the banks of the main river</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exclusion cables inside existing structure -->
+         {% if data.on_existing_thing=="exemption_4" %}
+
+        <p class="bold-small">Conditions for cables, service
+        crossings attached to existing structure</p>
+
+
+        <ol class="list list-bullet">
+            <li>the service crossing does not project more than 1 metre horizontally from the structure;</li>
+            <li>the service crossing follows the existing cross-sectional profile of the structure to the main river in both normal and flood flow;</li>
+            <li>the service crossing does not pass through any bank, culvert, flood defence structure or river control works on the main river or through any sea defence;</li>
+            <li>permanent hazard markers are erected on both banks of the main river; and</li>
+            <li>a notification has not been sent by the regulator to the landowner that the structure has been identified for removal or modification in order to achieve the measures set out in the relevant River Basin Management Plan, within the meaning of Article 13 of the Water Framework Directive, that are designed to move a water body to good status pursuant to Article 4 of the Water Framework Directive.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption cables above the river -->
+         {% if data.on_new_thing=="exemption_2" %}
+
+        <p class="bold-small">Conditions for cables above the
+        river</p>
+
+
+                                <ol class="list list-bullet">
+            <li>the service crossing is within 10° of perpendicular to the direction of flow of the main river;</li>
+            <li>the vertical and horizontal clearances of the service crossing comply with the requirements set out in the table below;</li>
+            <li>permanent hazard markers are erected on both banks of the main river;</li>
+            <li>the bed and banks of the main river are not disturbed by the works; and
+            <li>all excavated material not re-used on the site of the works is removed from the floodplain.</li>
+
+            <table>
+              <thead>
+                <tr>
+                  <th class="numeric" scope="col">Voltage (kV)</th>
+                  <th class="numeric" scope="col" style="text-align: right";>Vertical clearance (metres)</th>
+                  <th class="numeric" scope="col" style="text-align:right";>Horizontal clearance (metres)</th>
+                </tr>
+              </thead>
+
+                <tbody>
+                  <tr>
+                    <td class="numeric">275</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">400</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">132</td>
+                    <td class="numeric" style="text-align: right">12</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="numeric">66</td>
+                    <td class="numeric" style="text-align: right">12</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">33</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">11</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">6.6</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">4.15</td>
+                    <td class="numeric" style="text-align: right">6</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption cables within river -->
+         {% if data.on_new_thing=="exemption_3" %}
+
+        <p class="bold-small">Conditions for cables within or below the
+        river</p>
+
+
+        <ol class="list list-bullet">
+             <li>the service crossing is within 10° of perpendicular to the direction of flow in the main river;</li>
+             <li>a distance is maintained—</li>
+            <ul>
+              <li>(i) of no less than 1.5 metres from the bed of the main river to the top of the service crossing; and</li> <li>(ii) at the same height above sea level between points that are 5 metres beyond the top of each bank of the main river;</li> 
+            </ul>
+            <li>the distance from the launch and reception pits to the landward side of each bank of the main river is—</li>
+            <ul>
+              <li>(i) 8 metres or more in the case of a non-tidal main river;</li>
+              <li>(ii) 16 metres or more in the case of a tidal main river;</li>
+            </ul>
+            <li>the service crossing does not pass through any bank, culvert, remote defence or river control works on the main river or through any sea defence;
+            <li>the service crossing is 50 metres or more upstream of any impoundment or artificially raised channel;</li>
+            <li>permanent hazard markers are erected on both banks of the main river;</li>
+            <li>all excavated material not re-used on the site of the works is removed from the floodplain;</li>
+            <li>the works are not carried out in, or within 100 metres of, a water body in England that is part of a main river classified as of high morphological status by the Agency in accordance with the relevant directions; and</li>
+            <li>the bed and banks of the main river are not disturbed by the works.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption cables above river -->
+         {% if data.on_new_thing=="exemption_2" %}
+
+        <p class="bold-small">Conditions for cables above the
+        river</p>
+
+
+        <ol class="list list-bullet">
+            <li>the service crossing is within 10° of perpendicular to the direction of flow of the main river;</li>
+            <li>the vertical and horizontal clearances of the service crossing comply with the requirements set out in the table below;</li>
+            <li>permanent hazard markers are erected on both banks of the main river;</li>
+            <li>the bed and banks of the main river are not disturbed by the works; and
+            <li>all excavated material not re-used on the site of the works is removed from the floodplain.</li>
+
+            <table>
+              <thead>
+                <tr>
+                  <th class="numeric" scope="col">Voltage (kV)</th>
+                  <th class="numeric" scope="col" style="text-align: right";>Vertical clearance (metres)</th>
+                  <th class="numeric" scope="col" style="text-align:right";>Horizontal clearance (metres)</th>
+                </tr>
+              </thead>
+
+                <tbody>
+                  <tr>
+                    <td class="numeric">275</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">400</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">132</td>
+                    <td class="numeric" style="text-align: right">12</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="numeric">66</td>
+                    <td class="numeric" style="text-align: right">12</td>
+                    <td class="numeric" style="text-align: right">15</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">33</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">11</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">6.6</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                    <td class="numeric" style="text-align: right">10</td>
+                  </tr>
+
+                  <tr>
+                    <td class="numeric">4.15</td>
+                    <td class="numeric" style="text-align: right">6</td>
+                    <td class="numeric" style="text-align: right">9</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption dredging under 20m -->
+         {% if data.dredging_distance=="exemption_24" %}
+
+        <p class="bold-small">Conditions for dredging under
+        under 20m</p>
+
+
+        <ol class="list list-bullet">
+            <li><li>no dredging has been carried out in the previous 12 months in the same main river and property;</li>
+            <li>the works are completed within 12 months of registration of the exemption;</li>
+            <li>the works do not damage the bed or banks of the main river;</li>
+            <li>the dredging does not include the removal of gravel;</li>
+            <li>the works do not remove vegetation from the bed or banks of the main river, other than vegetation growing in or through the silt and sand;</li>
+            <li>the dredging is limited to the removal of accumulated silt and sand on the established bed of the main river;</li>
+            <li>the works do not involve the use of a vehicle or machinery on the bed or banks of the main river;</li>
+            <li>the works do not occur in, or within 1 kilometre upstream of, a type of habitat included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006 or by Welsh Ministers under section 42 of that Act;</li>
+            <li>the dredging and subsequent deposition of dredged material do not have a significant adverse effect on species included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006, or by Welsh Ministers under section 42 of that Act, that are not protected species;</li>
+            <li>the works do not occur between 15th March and 15th June inclusive in any year;</li>
+            <li>on a main river that is a designated salmonid river, the works do not occur between 1st October and 14th March inclusive in any year;</li>
+            <li>the works and any equipment used comply with the dredging and removal of silt and sand requirements;</li>
+            <li>the works are not carried out in, or within 1 kilometre upstream or 500 metres downstream of, a water body that is part of a main river classified as of high morphological status by the Agency in accordance with the relevant directions; and</li>
+            <li>the dredging does not occur in a designated sensitive water body</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption dredging betweem 20m and 1.5km -->
+         {% if data.dredging_distance=="exemption_23" %}
+
+        <p class="bold-small">Conditions for dredging between
+        20m and 1.5km of a river</p>
+
+
+        <ol class="list list-bullet">
+            <li>the works do not occur in any location where dredging has been carried out within the previous three years;</li>
+            <li>the works do not occur in any location on a watercourse where dredging has taken place within 1.5 kilometres upstream or downstream of that location in the previous 12 months;</li>
+            <li>the works are completed within three years of registration of the exemption;</li>
+            <li>the works do not damage the bed or banks of the main river;</li>
+            <li>the dredging does not include the removal of gravel;</li>
+            <li>the dredging is limited to the removal of accumulated silt and sand on the established bed of the main river;</li>
+            <li>the works do not remove vegetation from the bed or banks of the main river, other than vegetation growing in or through the silt and sand;</li>
+            <li>the works do not involve the use of a vehicle or machinery on the bed or banks of the main river;</li>
+            <li>the works do not occur in, or within one kilometre upstream of, a type of habitat included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006 or by Welsh Ministers under section 42 of that Act;</li>
+            <li>the dredging and subsequent deposition of dredged material do not have a significant adverse effect on species included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006, or by Welsh Ministers under section 42 of that Act, that are not protected species;</li>
+            <li>the works do not occur between 15th March and 15th June inclusive in any year;</li>
+            <li>on a main river that is a designated salmonid river, the works do not occur between 1st October and 14th March inclusive in any year;</li>
+            <li>the works and any equipment used comply with the dredging and removal of silt and sand requirements;</li>
+            <li>the works are not carried out in, or within 1 kilometre upstream or 500 metres downstream of, a water body that is part of a main river classified as of high morphological status by the Agency in accordance with the relevant directions;</li>
+            <li>the works do not occur in a designated sensitive water body;</li>
+            <li>on a non-tidal main river, the works do not occur within 8 metres of a flood defence structure or river control works; and</li>
+            <li>on a tidal main river, the works do not occur within 16 metres of a flood defence structure or sea defence.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- permit dredging more than 1.5km -->
+         {% if data.dredging_distance=="permit" %}
+
+        <p class="bold-small">Conditions for dredging over
+        1.5km of a river</p>
+
+
+        <ol class="list list-bullet">
+            <li>Rule</li>
+
+
+            <li>Rule</li>
+
+
+            <li>Rule</li>
+        </ol>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        <br>
+        {% endif %} 
+        <!-- exemption for removing silt from bridges -->
+         {% if data.what_you_removing=="exemption_21" %}
+
+        <p class="bold-small">
+            Conditions for removing silt or sand from around a bridge or culvert
+        </p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 1km upstream of a site designated as a Special
+            Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out the works in or within 1km upstream of a priority habitat that has been selected for its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506</li>
+            <li>you cannot carry out any work in or within 1km upstream or 500m downstream of a river or lake in England that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506</li>
+            <li>(if your activity is near the border with Wales) you cannot carry out any work in or within 100m of a river or lake in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506</li>
+            <li>you must ensure that the removal or material and subsequent deposit of materials does not have a significant adverse effect on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areasand-wildlife</li>
+            <li>the works do not affect the structural integrity of the bridge arch or culvert</li>
+            <li>in the case of works within bridge arches, the removal of silt and sand is limited to the removal of accumulated silt and sand on the established bed of the main river</li>
+            <li>the works do not occur between 15th March and 15th June inclusive in any year
+            <li>on a main river that is a designated salmonid river, the works do not occur between 1st October and 14th March inclusive in any year</li>
+            <li>the works do not expose the structural foundations or footings of the bridge or culvert
+            <li>the works and any equipment used to remove the sand and silt comply with the dredging and removal of silt and sand requirements which are in the Environment Agency document 'Dredging and the removal of silt and sand from main rivers as a flood risk activity under the Environmental Permitting Regulations: Helping you maintain your watercourse' 1 February 2016. You can find a copy of these requirements on gov.uk.</li>
+            <li>the works do not involve the use of machinery on the bed or banks of the main river more than 20 metres from the bridge or culvert 26 of 40</li>
+            <li>the works do not involve the use of a vehicle on the bed or banks of the main river</li>
+            <li>the works do not damage the culvert or the banks or bed of the main river</li>
+        </ol>
+
+        <p>In order to meet the description and conditions for this exemption, you will not be able to remove remove gravels from a bridge arch.</p>
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        
+        <!-- exemption for removing silt from around another type of structure -->
+         {% if data.what_you_removing=="exemption_22" %}
+
+        <p class="bold-small">Conditions for removing silt or
+        sand from other stuff</p>
+
+
+        <ol class="list list-bullet">
+            <li>the works take place no more than 10 metres upstream or downstream from the edge of the structure;</li>
+            <li>the removal of silt and sand does not affect the structural integrity of the structure;</li>  <li>the works do not damage the banks or bed of the main river;</li>
+            <li>the works are limited to the removal of accumulated silt and sand on the established bed of the main river;</li>
+            <li>the removal of silt and sand does not expose the structural foundations or footings of the structure;</li>
+            <li>silt and sand is not removed to below the level of the base of the inside of an adjacent culvert;</li>
+            <li>the works do not remove vegetation from the bed or banks of the main river, other than vegetation growing in or through the silt and sand;</li>
+            <li>the works do not involve the use of a vehicle or machinery on the bed or banks of the main river;</li>
+            <li>the removal of silt and sand does not occur in, or within 1 kilometre upstream of, a type of habitat included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006 or by Welsh Ministers under section 42 of that Act;</li>
+            <li>the removal of silt and sand and its subsequent deposition do not have a significant adverse effect on species included in a list published by the Secretary of State under section 41 of the Natural Environment and Rural Communities Act 2006, or by Welsh Ministers under section 42 of that Act, that are not protected species;</li>
+            <li>the removal of silt and sand does not occur between 15th March and 15th June inclusive in any year;</li>
+            <li>on a main river that is a designated salmonid river, the removal of silt and sand does not occur between 1st October and 14th March inclusive in any year;</li>
+            <li>the works and any equipment used to remove the sand and silt comply with the dredging and removal of silt and sand requirements;</li>
+            <li>the works are not carried out in, or within one kilometre upstream or 500 metres downstream of, a water body that is part of a main river classified as of high morphological status by the Agency in accordance with the relevant directions; and</li>
+            <li>the removal of silt and sand does not occur in a designated sensitive water body.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} 
+        <!-- exemption for removing silt from sediment trap -->
+         {% if data.what_you_removing=="exclusion_15" %}
+
+        <p class="bold-small">Conditions for removing silt or
+        sand from a sediment trap</p>
+
+
+        <ol class="list list-bullet">
+            <li>only sand and silt is cleared from the trap</li>
+            <li>(b) the work does not result in sand or silt being transmitted downstream</li>
+            <li>where the sand and silt from the clearance is spread on the floodplain, it is spreadto a depth of no more than 100mm and no closer than 8 metres from the landward side of either bank.</li>
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %} <!-- exemption detwatering -->
+         {% if data.dewatering_size=="exemption_7" %}
+
+        <p class="bold-small">Conditions for dewatering</p>
+
+
+        <ol class="list list-bullet">
+            <li>you cannot carry out the activity on or within 500m of a site designated as a Special Protection Area (SPA), Special Area for Conservation (SAC), Ramsar site, Site of Special Scientific Interest (SSSI) or Local Nature Reserve (LNR). The locations of all these sites are available to view on MAGIC at www.magic.gov.uk</li>
+            <li>you cannot carry out any work in or within 100m of a river or lake in England or (if your work is near the border) in Wales that is classified as of high morphological status under the Water Framework Directive. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you cannot carry out any work in or within 500m upstream of a priority habitat that has been selected for the importance of its river or freshwater habitats. These are often called Natural Environment and Rural Communities Act 2006 section 41 and section 42 habitats. For information call the Environment Agency customer contact centre on 03708 506 506.</li>
+            <li>you plan your works to ensure there are no significant adverse effects on protected and priority species of importance for nature conservation. You can find more information on the species that could be impacted by your works from your local record centre or Natural England's guidance on construction near protected areas and wildlife https://www.gov.uk/guidance/construction-near-protected-areas-and-wildlife</li>
+            <li>any pumps used in the dewatering process must be fitted with a 20mm mesh screen</li>
+            <li>you must take all reasonable steps to protect all aquatic plants and animals found in the area affected by dewatering. You would be expected to plan for how to manage any fish or other species (such as crayfish) that could become stranded during the works</li>
+            <li>the duration of the dewatering is no longer than 4 weeks</li>
+            <li>you do not carry out the dewatering between 15th March and 15th June inclusive in any year</li>
+            <li>on a main river that is a designated salmonid river, the dewatering is not in place between 1st October and 14th March inclusive in any year</li>
+            <li>the dewatering does not affect more than 10 metres of the bank of a main river at any one time</li>
+            <li>the dewatering is not within 8 metres of a flood defence structure or river control works</li>
+            <li>the depth of water adjacent to the dewatered area does not exceed 1.2 metres</li>
+            <li>the dewatering structure projects into or over the main river no more than 1.2 metres or no more than 10% of the width of the main river, whichever is less</li>
+            <li>you remove from the floodplain all excavated material not re-used on the site of the works</li>
+
+            <p>In order to meet the description and conditions for this exemption, you cannot dewater the full width of channel and over pump over the water.</p> 
+        </ol>
+
+
+        <p>See <a href=
+        "/version_1/guidance/guidance">regulations</a></p>
+        {% endif %}
+
+        <!-- permit: dewatering -->
+        {% if data.dewatering_size=="permit_26" %}
+
+          <h3 class="heading-medium">
+            Conditions for doing dewatering
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the land edged in green on the site plan</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+            <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+            <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+            <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+            <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+            <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+
+          <p>The activities shall not be carried out within:</p>
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          </ol>
+
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          </ol>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no26-temporary-dewatering-affecting-up-to-20-metres-of-a-main-river">regulations</a>
+          </p>
+            
+        {% endif %}     
+
+        <!-- permit: buidling wide outfall -->
+        {% if data.outfall_width=="permit_27" %}
+
+          <h3 class="heading-medium">
+            Conditions for constructing an outfall pipe
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the land edged in green on the site plan</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The diameter of the outfall pipe shall be 500 millimetres or less</li>
+            <li>The width of the watercourse at the location where the outfall is to be installed shall be equal to or greater than 10 metres from bank top to bank top</li>
+            <li>The total length of bank affected during construction of the outfall and headwall shall not be more than 3 metres</li>
+            <li>The height of the headwall shall be no more than 75% of the height of the bank or 1.5 metres, whichever is less</li>
+            <li>The gradient of the outfall pipe through the headwall should be less than 1:50 (fall in elevation:length)</li>
+            <li>The outfall pipe shall be aligned to an angle of between 30° and 60° to the direction of flow in the watercourse</li>
+            <li>The outfall pipe route shall not pass through or under any remote defence, river control work, sea defence, raised embankment or wall forming part of the bank of the main river</li>
+            <li>The activity shall not be carried out within a culvert or bridge</li>
+            <li>The outfall shall not be pumped</li>
+            <li>The headwall, wing walls and apron shall not project beyond the existing line of the bank prior to the activity being carried out</li>
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be commenced within three years of the date of the grant of the permit and completed within 3 months of commencement</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li> 
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no27-constructing-an-outfall-pipe-of-300mm-to-500mm-diameter">regulations</a>
+          </p>
+
+        {% endif %}    
+
+          <!-- permit: building a non-highway bridge -->
+          {% if data.bridge_type=="permit_28" %}
+
+          <h3 class="heading-medium">
+            Conditions for installing a clear span bridge on a main river
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The bridge deck shall be no wider than 4.2 metres</li>
+            <li>The soffit shall be at least 0.6 metres higher than the top of the bank on both sides of the river</li>
+            <li>The watercourse shall be no wider than 8 metres measured from the bank top on one side to the bank top at the other side, at the location where the bridge is installed</li>
+            <li>The bridge shall not be associated with, or lead onto or off, the public highway</li>
+            <li>The approach ramp or steps for the bridge shall not extend further than is necessary to allow a gradient of 10% (1 metre vertical for 10 metres horizontal) on the approach</li>
+            <li>The level of the land at each end and surrounding the approach ramp or steps to the bridge shall not be changed by the construction</li>
+            <li>The bridge shall be securely attached to foundations which are no closer than a distance of 1 metre from the watercourse</li>
+            <li>The length of the bank disturbed by the activity shall extend to no more than 2 metres to either side of the bridge</li>
+            <li>Any parapet of the footbridge shall be of open construction comprising either post and rail, post and wire mesh fencing of at least 100mm spacing, or post and wire strands</li>
+            <li>There shall be no light spill from artificial lighting into the watercourse</li>
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>The activity shall be commenced within three years of the date on which the permit is granted and completed within 3 months of commencement</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no28-installing-a-clear-span-bridge-on-a-main-river">regulations</a>
+          </p>
+
+        {% endif %}    
+
+        <!-- permit: storing matering in a river -->
+        {% if data.what_you_digging=="permit_29" %} 
+
+        <h3 class="heading-medium">
+          Conditions for temporary storage within the flood plain of a main river
+        </h3>
+
+        <p class="bold-small">
+          General rules
+        </p>
+
+        <ol class="list list-bullet">
+          <li>Make sure you're using sufficient competent persons and resources</li>
+          <li>Make sure you keep records of your work</li>
+          <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+          <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+        </ol>
+
+        <p class="bold-small">
+          Design and scale of the work
+        </p>
+
+        <ol class="list list-bullet">
+          <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+          <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+          <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+          <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+          <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+          <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+
+        </ol>
+
+        <p class="bold-small">
+          How you carry out the work
+        </p>
+
+        <ol class="list list-bullet">
+          <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+
+        </ol>
+
+        <p class="bold-small">
+          Location of the work
+        </p>
+        <p>The activities shall not be carried out within:
+        <ol class="list list-bullet">
+          <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+          <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+          <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+          <li>8 metres of a flood defence structure or river control work or drainage work</li>
+          <li>50 metres of a manmade structure in, over or under the watercourse</li>
+          <li>100 metres of any non-agricultural building in the floodplain</li>
+        
+        <p class="bold-small">
+          Keeping records of the work
+        </p>
+
+        <ol class="list list-bullet">
+        <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+        <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+        <li>
+
+        <p>
+          See <a href="https://www.gov.uk/government/publications/sr2015-no29-temporary-storage-within-the-flood-plain-of-a-main-river">regulations</a>
+        </p>
+
+        {% endif %} 
+
+        <!-- permit: diverting a river -->
+        {% if data.dewatering_or_diverting=="permit_30" %}
+
+          <h3 class="heading-medium">
+            Conditions for temporary diversion of a main river
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+            <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+            <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+            <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+            <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+            <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no30-temporary-diversion-of-a-main-river">regulations</a>
+          </p>
+
+        {% endif %}
+
+        <!-- permit: habitats in channel -->
+        {% if data.channel_habitat_size=="permit_31" %}
+
+          <h3 class="heading-medium">
+            Conditions for channel habitat structure made of natural materials
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+            <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+            <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+            <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+            <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+            <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li>
+        
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no31-channel-habitat-structure-made-of-natural-materials">regulations</a>
+          </p>
+
+        {% endif %} 
+
+
+        <!-- permit: building a culvert -->
+        {% if data.what_you_building=="permit_32" %}
+
+          <h3 class="heading-medium">
+            Conditions for installing a access culvert of no more than 5 metres length
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+            <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+            <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+            <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+            <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+            <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no32-installing-a-access-culvert-of-no-more-than-5-metres-length">regulations</a>
+          </p>
+
+        {% endif %} 
+
+        <!-- permit: repairing a riverbank -->
+        {% if data.what_you_building=="permit_32" %}
+
+          <h3 class="heading-medium">
+            Conditions for repairing and protecting up to 20 metres of the bank of a main river
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <p class="bold-small">
+            Design and scale of the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall affect no more than 20 metres of the bank of the watercourse at any one time</li>
+            <li>The dewatering structure shall be in place for no more than 4 weeks</li>
+            <li>The works are not allowed to happen within 8m of flood defences, or within 50m of other built structures on the river or within 100m of any non-agricultural building in the flood plain</li>
+            <li>The depth of water adjacent to the dewatered area shall not exceed 1.2m</li>
+            <li>The dewatering structure shall project into or over the main river no more than 10% of the width of the river</li>
+            <li>The top level of the structure blocking and diverting the watercourse shall be lower than the ground level on the landward side at the foot of the bank, on each side of the main river.</li>
+
+          </ol>
+
+          <p class="bold-small">
+            How you carry out the work
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>The activity shall be completed withinn 6 months of the date on which the permit is granted</li>
+
+          </ol>
+
+          <p class="bold-small">
+            Location of the work
+          </p>
+          <p>The activities shall not be carried out within:
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          
+          <p class="bold-small">
+            Keeping records of the work
+          </p>
+
+          <ol class="list list-bullet">
+          <li>be retained, unless otherwise agreed in writing by the Environment Agency, for at least 6 years from the date when the records were made</li>
+          <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          <li>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no33-repairing-and-protecting-up-to-20-metres-of-the-bank-of-a-main-river">regulations</a>
+          </p>
+
+        {% endif %} 
+
+        <!-- permit: big scaffolding -->
+        {% if data.scaffolding_size=="permit_34" %}
+
+         <h2>
+            Conditions for temporary scaffolding affecting up to 20 metres length of a main river
+          </h2>
+
+          <h3>
+            General rules
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be completed within 6 months of the date on which the permit is granted</li>
+            <li>The activities shall not extend beyond the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+          </ol>
+
+          <h3>
+            Design and scale of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The scaffolding shall be in place for a maximum of 4 weeks</li>
+            <li>The scaffolding shall not occupy more than 20 metres of the length of the watercourse at any one time</li>
+            <li>The width of the watercourse from the top of the bank on one side of the watercourse to the top of the bank on the other side shall be at least 4 metres, at the point where the scaffolding is installed</li>
+            <li>The scaffolding shall project into or over the main river by no more than 1.5 metres from the bank</li>
+            <li>The transoms and walking decks shall be set no lower than 600 millimetres above the water level</li>
+          </ol>
+
+          <h3>
+            Location of the work
+          </h3>
+
+          <p>The activities shall not be carried out within:</p>
+
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          </ol>
+
+         <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no34-temporary-scaffolding-affecting-up-to-20-metres-length-of-a-main-river">regulations</a>
+          </p> 
+
+        {% endif %}  
+
+        <!-- permit: digging a wetland pond -->
+        {% if data.what_you_digging=="permit_35" %}
+
+          <h2>
+            Conditions for excavating a wetland or pond in a main river floodplain
+          </h2>
+
+          <h3>
+            General rules
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be commenced within three years of the date on which the permit is granted and completed within 3 months of commencement</li>
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+          </ol>
+
+          <h3>
+          Design and scale of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The pond or wetland excavation shall not be carried out within 16 metres from the watercourse</li>
+            <li>The capacity of the floodplain shall not be reduced by the activity</li>
+            <li>All spoil excavated in creating the wetland or pond shall be removed to outside of the flood plain</li>
+
+          <h3>
+            Location of the work
+          </h3>
+          
+          <p>The activities shall not be carried out within:
+          
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          </ol>
+          
+          <h3>
+            Keeping records of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>All records shall be retained for at least 6 years from the date when the records were made, unless otherwise agreed in writing by the Environment Agency</li>
+            <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          </ol>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no35-excavating-a-wetland-or-pond-in-a-main-river-floodplain">regulations</a>
+          </p>
+
+        {% endif %} 
+
+        <!-- permit: digging big investigation hole -->
+        {% if data.investigation_hole=="permit_36" %}
+
+          <h2>
+            Conditions for installing and using site investigation boreholes and temporary trial pits within a main river floodplain for a period of up to 4 weeks
+          </h2>
+
+          <h3>
+            General rules
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be completed within 6 months of date on which the permit is granted</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+          </ol>
+
+          <h3>
+          Design and scale of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be completed within 4 weeks of commencing</li>
+            <li>The boreholes and trial pits shall not be installed within 5 metres of the main river</li>
+            <li>All excavated materials shall be returned to the place they were removed from or removed from the flood plain entirely</li>
+            <li>The activity shall not be carried out in the channel or bed of the watercourse or on the bank</li>
+
+          <h3>
+            Location of the work
+          </h3>
+          
+          <p>The activities shall not be carried out within:
+          
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          </ol>
+          
+          <h3>
+            Keeping records of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>All records shall be retained for at least 6 years from the date when the records were made, unless otherwise agreed in writing by the Environment Agency</li>
+            <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          </ol>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no36-installing-and-using-site-investigation-boreholes-and-temporary-trial-pits-within-a-main-river-floodplain-for-a-period-of-up-to-4-weeks">regulations</a>
+          </p>            
+
+        {% endif %}
+
+
+        <!-- permit: moving lots of gravel -->
+        {% if data.what_you_removing=="permit_38" %}
+
+          <h3 class="heading-medium">
+            Conditions for removing a total of 100 metres of exposed gravel from bars and shoals
+          </h3>
+
+          <p class="bold-small">
+            General rules
+          </p>
+
+          <ol class="list list-bullet">
+            <li>The activity shall be commenced within three years of the date on which the permit is granted, and completed within 3 months of commencement</li>
+            <li>The activities shall not extend beyond the site, being the land edged in green on the site plan attached to the permit</li>
+            <li>The activities shall be undertaken outside of the relevant fish breeding season</li>
+            <li>Make sure you're using sufficient competent persons and resources</li>
+            <li>Make sure you keep records of your work</li>
+          </ol>
+
+          <h3>
+          Design and scale of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>Only dry gravels found above normal winter levels shall be removed</li>
+            <li>The activity shall not be carried out upon the same part of a watercourse where any removal of gravel has been carried out within the previous 5 years</li>
+            <li>The activity shall not be carried out where established vegetation is growing in or on the gravel, unless the vegetation consists solely of invasive non-native species</li>
+            <li>The activity shall only be carried out in the dry, leaving a buffer of dry gravel of a minimum of 0.5 metre inside the wetted perimeter of the bar or shoal</li>
+            <li>A minimum of one-third of the dry gravels shall be left undisturbed on the surface of each shoal at the upstream edge</li>
+            <li>A maximum of 100 metres of exposed gravels shall be removed</li>
+
+          <h3>
+            Location of the work
+          </h3>
+          
+          <p>The activities shall not be carried out within:
+          
+          <ol class="list list-bullet">
+            <li>500m of a European designated nature conservation site, SSSI or National Nature Reserve</li>
+            <li>100m of an area identified as containing a Priority Species or Protected Species</li>
+            <li>100 metres upstream or downstream of a water body classified as having high morphological status</li>
+            <li>8 metres of a flood defence structure or river control work or drainage work</li>
+            <li>50 metres of a manmade structure in, over or under the watercourse</li>
+            <li>100 metres of any non-agricultural building in the floodplain</li>
+          </ol>
+          
+          <h3>
+            Keeping records of the work
+          </h3>
+
+          <ol class="list list-bullet">
+            <li>All records shall be retained for at least 6 years from the date when the records were made, unless otherwise agreed in writing by the Environment Agency</li>
+            <li>The operator shall send all reports and notifications required by the permit to the Environment Agency using the contact details supplied in writing by the Environment Agency</li>
+          </ol>
+
+          <p>
+            See <a href="https://www.gov.uk/government/publications/sr2015-no38-removing-a-total-of-100-metres-of-exposed-gravel-from-bars-and-shoals">regulations</a>
+          </p>            
+
+        {% endif %}
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

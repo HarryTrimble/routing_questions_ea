@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">draining river</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/result" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Are you draining part of the river or diverting it's flow of water to do your work?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Are you draining part of the river or diverting it's flow of water in order to do your work?
+          </legend>
+
+          <div class="form-group">
+            <label for="draining_1" class="block-label">
+              <input type="radio" id="draining_1" name="draining" value="yes">
+              Yes
+            </label>
+
+            <label for="draining_2" class="block-label">
+              <input type="radio" id="draining_2" name="draining" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

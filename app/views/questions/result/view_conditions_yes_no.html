@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        result
+      </li>
+      <li>
+        conditions
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/result/conditions" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Do you want view the conditions for doing your work?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Do you want view the conditions for doing your work?
+          </legend>
+
+          <p></p>
+
+          <div class="form-group">
+
+            <label for="view_conditions_yes_no_1" class="block-label">
+              <input id="view_conditions_yes_no_1" type="radio" name="view_conditions_yes_no" value="yes">
+              Yes
+            </label>
+
+            <label for="view_conditions_yes_no_2" class="block-label">
+              <input id="view_conditions_yes_no_2" type="radio" name="view_conditions_yes_no" value="no">
+              No
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

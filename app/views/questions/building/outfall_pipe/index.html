@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        building
+      </li>
+      <li>
+        what you building?
+      </li>
+      <li>
+        outfall
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/repair_maintain" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          How wide is the outfall pipe you want to build?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            How wide is the outfall pipe you want to build?
+          </legend>
+
+          <div class="form-group">
+
+            <label for="outfall_width_1" class="block-label">
+              <input id="outfall_width_1" type="radio" name="outfall_width" value="exemption_12">
+              Under 30cm
+            </label>
+
+            <label for="outfall_width_2" class="block-label">
+              <input id="outfall_width_2" type="radio" name="outfall_width" value="permit_27">
+              Between 30cm and 50cm
+            </label>
+
+            <p class="form-block">or</p>
+
+            <label for="outfall_width_3" class="block-label">
+              <input id="outfall_width_3" type="radio" name="outfall_width" value="bespoke_permit">
+              More than 50m
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

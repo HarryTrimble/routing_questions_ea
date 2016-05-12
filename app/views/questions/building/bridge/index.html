@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        building
+      </li>
+      <li>
+        what you building?
+      </li>
+      <li>
+        bridge type
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/repair_maintain" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What type of bridge are you building? 
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            How long is the stretch of river you are dredging?
+          </legend>
+
+          <div class="form-group">
+
+            <label for="bridge_type_1" class="block-label">
+              <input id="bridge_type_1" type="radio" name="bridge_type" value="exemption_5">
+              Footbridge
+            </label>
+
+            <label for="bridge_type_2" class="block-label">
+              <input id="bridge_type_2" type="radio" name="bridge_type" value="permit_28">
+              Non-highway bridge
+            </label>
+
+            <p class="form-block">or</p>
+
+            <label for="bridge_type_3" class="block-label">
+              <input id="bridge_type_3" type="radio" name="bridge_type" value="bespoke_permit">
+              Other types of bridge
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

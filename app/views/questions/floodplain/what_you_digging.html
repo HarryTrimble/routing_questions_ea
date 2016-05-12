@@ -1,0 +1,76 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">floodplain</a>
+      </li>
+      <li>
+        <a href="#">what you doinhg?</a>
+      </li>      
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/cables" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What are you doing?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What are you doing? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="what_you_digging_1" class="block-label">
+              <input id="what_you_digging_1" type="radio" name="what_you_digging" value="exemption_25">
+              Digging a scrape or shallow wetland feature
+            </label>
+
+            <label for="what_you_digging_2" class="block-label">
+              <input id="what_you_digging_2" type="radio" name="what_you_digging" value="how_big_hole">
+              Digging a borehole or trial pit to investigate a site
+            </label>
+
+            <label for="what_you_digging_3" class="block-label">
+              <input id="what_you_digging_3" type="radio" name="what_you_digging" value="permit_35">
+              Digging a wetland or pond
+            </label>
+
+            <label for="what_you_digging_4" class="block-label">
+              <input id="what_you_digging_4" type="radio" name="what_you_digging" value="permit_29">
+              Storing materials in the floodplain
+            </label>
+
+            <label for="what_you_digging_5" class="block-label">
+              <input id="what_you_digging_5" type="radio" name="what_you_digging" value="call_us">
+              Other
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        Questions
+      </li>
+      <li>
+        result
+      </li>
+      <li>
+        conditions
+      </li>
+      <li>
+        declaration
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+       <form method="get" action="#" class="form">
+
+        {{formData | safe}}
+
+        <h1 class="heading-large">
+          Declaration
+        </h1>
+
+        <br>
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            You must follow conditions to do your work.
+          </strong>
+        </div>
+
+        <br>
+        <br>
+
+        <p class="text">
+          By submitting this information you are confirming that, to the best of your knowledge, the details you have are providing are correct.
+        </p>
+
+        <br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

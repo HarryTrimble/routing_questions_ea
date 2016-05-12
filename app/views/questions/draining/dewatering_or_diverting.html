@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">draining river</a>
+      </li>
+      <li>
+        <a href="#">dewatering or diverting</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/result" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Are you dewatering or diverting the river?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Are you dewatering or diverting the river?
+          </legend>
+
+          <div class="form-group">
+            <label for="dewatering_or_diverting-1" class="block-label">
+              <input type="radio" id="dewatering_or_diverting-1" name="dewatering_or_diverting" value="dewatering">
+              Dewatering the river
+            </label>
+
+            <label for="dewatering_or_diverting-2" class="block-label">
+              <input type="radio" id="dewatering_or_diverting-2" name="dewatering_or_diverting" value="permit_30">
+              Diverting the river
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">removing silt</a>
+      </li>
+      <li>
+        <a href="#">are you dredging?</a>
+      </li>
+      <li>
+        <a href="#">dredging distance</a>
+      </li>   
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/dewatering" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          How long is the stretch of river you are dredging?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            How long is the stretch of river you are dredging?
+          </legend>
+
+          <div class="form-group">
+
+            <label for="dredging_distance_1" class="block-label">
+              <input id="dredging_distance_1" type="radio" name="dredging_distance" value="exemption_24">
+              Under 20m
+            </label>
+
+            <label for="dredging_distance_2" class="block-label">
+              <input id="dredging_distance_2" type="radio" name="dredging_distance" value="exemption_23">
+              Between 20m and 1.5km
+            </label>
+
+            <p class="form-block">or</p>
+
+            <label for="dredging_distance_3" class="block-label">
+              <input id="dredging_distance_3" type="radio" name="dredging_distance" value="bespoke_permit">
+              More than 1.5km
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

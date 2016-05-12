@@ -1,0 +1,76 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">removing silt</a>
+      </li>
+      <li>
+        <a href="#">what you removing?</a>
+      </li>   
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/dewatering" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          What are you removing?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            What are you removing? 
+          </legend>
+
+          <div class="form-group">
+
+            <label for="what_you_removing_1" class="block-label">
+              <input id="what_you_removing_1" type="checkbox" name="what_you_removing" value="exemption_21">
+              Silt or sand from around a bridge or culvert
+            </label>
+
+            <label for="what_you_removing_3" class="block-label">
+              <input id="what_you_removing_3" type="checkbox" name="what_you_removing" value="exemption_22">
+              Silt or sand from around another type of structure
+            </label>
+          
+            <label for="what_you_removing_4" class="block-label">
+              <input id="what_you_removing_4" type="checkbox" name="what_you_removing" value="exclusion_15">
+              Silt or sand from a purpose built sediment trap
+            </label>
+
+            <label for="what_you_removing_4" class="block-label">
+              <input id="what_you_removing_4" type="checkbox" name="what_you_removing" value="permit_38">
+              Gravel from the riverbed
+            </label>
+
+            <label for="what_you_removing_4" class="block-label">
+              <input id="what_you_removing_4" type="checkbox" name="what_you_removing" value="call_us">
+              Other
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "layout.html" %} {% block page_title %} Example - Forms {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="#">Questions</a>
+      </li>
+      <li>
+        <a href="#">scaffolding</a>
+      </li>
+      <li>
+        <a href="#">how wide?</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/questions/floodplain" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          How wide is the scaffolding you are putting up along the river?
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            How wide is the scaffolding you are putting up along the river?
+          </legend>
+
+          <div class="form-group">
+
+            <label for="scaffolding_size_1" class="block-label">
+              <input id="scaffolding_size_1" type="radio" name="scaffolding_size" value="exemption_6">
+              Under 10m
+            </label>
+
+            <label for="scaffolding_size_2" class="block-label">
+              <input id="scaffolding_size_2" type="radio" name="scaffolding_size" value="permit_34">
+              Between 10m and 20m
+            </label>
+
+            <p class="form-block">or</p>
+
+            <label for="scaffolding_size_3" class="block-label">
+              <input id="scaffolding_size_3" type="radio" name="scaffolding_size" value="bespoke_permit">
+              More than 20m
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
